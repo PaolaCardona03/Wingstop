@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Wingstop - Comida Deliciosa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar img {
+            height: 50px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        .navbar select {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .header, .section, .footer {
+            padding: 80px 20px 20px 20px;
+        }
+        .header {
+            text-align: center;
+            background-image: url('pruebaimagen.jpg');
+            background-size: cover;
+            color: white;
+        }
+        .section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #008000; /* Strong green color */
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #006400; /* Darker green */
+        }
+        .images-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .images-grid img {
+            margin: 10px;
+            border: 3px solid #333;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        const translations = {
+            "es": {
+                "promotions": "PROMOCIONES",
+                "locations": "SUCURSALES",
+                "about_us": "SOBRE NOSOTROS",
+                "terms": "TERMINOS Y CONDICIONES",
+                "privacy": "AVISO DE PRIVACIDAD",
+                "members": "Integrantes"
+            },
+            "en": {
+                "promotions": "Promotions",
+                "locations": "Locations",
+                "about_us": "About Us",
+                "terms": "Terms and Conditions",
+                "privacy": "Privacy Notice",
+                "members": "Members"
+            },
+            "fr": {
+                "promotions": "Promotions",
+                "locations": "Succursales",
+                "about_us": "À Propos de Nous",
+                "terms": "Termes et Conditions",
+                "privacy": "Avis de Confidentialité",
+                "members": "Membres"
+            }
+        };
+
+        function applyTranslations(language) {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                el.textContent = translations[language][key];
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('languageSwitcher').addEventListener('change', function() {
+                applyTranslations(this.value);
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+        <img src="logowings.jpg" alt="Wingstop Logo">
+        <div>
+            <a href="https://www.wingstop.com.mx/tu-pedido">Pedido</a>
+            <a href="https://wingstop.com.mx/menu#seccion" data-translate="menu">Menú</a>
+            <a href="https://wingstopmexico.com/promociones/" data-translate="promotions">PROMOCIONES</a>
+            <a href="https://wingstopmexico.com/sucursales/" data-translate="locations">SUCURSALES</a>
+            <select id="languageSwitcher">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Bienvenido a Wingstop</h1>
+        <p>¡Encuentra un sin fin de comida deliciosa!</p>
+    </div>
+
+    <div class="section">
+        <a href="IniciaSesionP.html" class="btn"><img src="iniciasesionfoto.jpg.png" width="350" height="150" alt="Inicia Sesión"></a>
+        <a href="https://wingstop.com.mx/menu#seccion" class="btn"><img src="ordenaaquiwings.jpg.png" width="900" height="700" alt="Ordena Aquí"></a>
+        <a href="https://www.google.com/maps/dir//Wingstop+Reynosa+Morelos,+Boulevard+Morelos,+Prolongaci%C3%B3n+185,+Longoria,+88699+Reynosa,+Tamps./@26.069088,-98.2932481,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x86650fbf0f8e3b77:0x981331d121eb7d4f!2m2!1d-98.2906493!2d26.0690609?entry=ttu#seccion" class="btn"><img src="encuentratuwings.jpg.png" width="900" height="700" alt="Encuentra tu Wings"></a>
+    </div>
+
+    <div class="section images-grid">
+        <img src="boneless.jpg.png" width="600" height="500" alt="Boneless">
+        <img src="Imagen.jpg.png" width="600" height="500" alt="Imagen">
+        <img src="imagen1.jpg.png" width="600" height="500" alt="Imagen1">
+        <img src="heart.jpg.png" width="600" height="500" alt="Heart">
+        <img src="imagen2.jpg.png" width="600" height="500" alt="Imagen2">
+        <img src="imagen3.jpg.png" width="600" height="500" alt="Imagen3">
+    </div>
+
+    <div class="section">
+        <a href="https://wingstopmexico.com/promociones/" class="btn" data-translate="promotions">PROMOCIONES</a>
+        <a href="https://wingstopmexico.com/sucursales/" class="btn" data-translate="locations">SUCURSALES</a>
+        <a href="https://wingstopmexico.com/quienes-somos/#seccion" class="btn" data-translate="about_us">SOBRE NOSOTROS</a>
+        <a href="https://wingstopmexico.com/tcventaenlinea/#seccion" class="btn" data-translate="terms">TERMINOS Y CONDICIONES</a>
+        <a href="https://wingstopmexico.com/privacidad/#seccion" class="btn" data-translate="privacy">AVISO DE PRIVACIDAD</a>
+        <a href="Integrantes.html" class="btn" data-translate="members">Integrantes</a>
+    </div>
+
+    <div class="footer">
+        <p>Síguenos en nuestras redes sociales:</p>
+        <a href="https://www.facebook.com/WingstopReynosaTamaulipas/?locale=es_LA#seccion">
+            <img src="face.jpg.png" width="100" height="100" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/wingstopmex/?hl=es#seccion">
+            <img src="ig.jpg.png" width="100" height="100" alt="Instagram">
+        </a>
+        <div>
+            <img src="wingstopmexico.jpg.png" width="260" height="100" alt="Wingstop México">
+        </div>
+    </div>
+
+</body>
+</html>
